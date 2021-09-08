@@ -44,12 +44,14 @@
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script src="js/index.js"></script>
+  <script src="js/idb.js"></script>
   <script>
     (function(){
-      if("serverWorker" in navigator) {
-        navigator.serverWorker.register('/server-worker.js')
+      if("serviceWorker" in navigator) {
+        console.log("I am here")
+        navigator.serviceWorker.register('/service-worker.js')
         .then(() => {
-          console.log("Server worker registered succesfully")
+          console.log("Service worker registered succesfully")
         })
         .catch((err) => {
           console.log(error)
